@@ -35,7 +35,7 @@ app.use(express.urlencoded({extended: true}));
         }, 6000); // 현재 타임아웃 기준이 5초이다. 
         // 따라서 여기서 5초 이전으로 하면 성공하고 5초 이상으로하면 요청초과된다.
     });
-    
+
 
 
 // 사용할 모듈
@@ -56,16 +56,17 @@ app.use(express.urlencoded({extended: true}));
     });
 
     app.post('/api/world', (req, res) => {
-        console.log(req.body);
+        console.log("From node  :  ");
+        console.log(req.body.post);
         res.end(
-            `I received your POST request. This is what you sent me : ${req.body.post}`,
+            req.body.post,
         );
     });
 
 
 // Error Handler (404 There is no Page)
 // 타임 아웃일 경우 여기까지 오지 않는다. 바로 에러 핸들러 모듈로 간다.
-app.use((req, res) => { 
+app.use((req, res) => {
     console.log('Entering 404 handler');
     fs.readFile(__dirname + '/public/errorPages/404 Not Found.html')
         .then((data) => {
