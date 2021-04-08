@@ -56,11 +56,20 @@ app.use(express.urlencoded({extended: true}));
     });
 
     app.post('/api/world', (req, res) => {
-        console.log("From node  :  ");
-        console.log(req.body.post);
-        res.end(
-            req.body.post,
-        );
+        console.log("node: From front data  :  ");
+        // This way is to receive from front data
+        console.log(req.body);
+        // req.body안에 프론트 axios에서 보낸 데이터가 들어있다.
+        // 이 req.body에는 프론트에서 보낸 데이터가 들어가있고, 이걸 다시
+        // 프론트로 그대로 보내면, 프론트에서는 res.data에 들어가 있다. (axios 기준)
+
+        if(req.body.data1 === 'It is String.'){
+            console.log('여기가아니라고?');
+            res.end(req.body.data1);
+        }else{
+            console.log('왜 여기야?');
+            res.end("Default Data!!");
+        }
     });
 
 
