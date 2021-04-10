@@ -2,6 +2,7 @@ const express = require('express');
 const timeout = require('connect-timeout');
 const app = express();
 const fs = require('fs').promises;
+const morgan = require('morgan');
 
 // 포트 설정 
 app.set('port', process.env.PORT || 3500);
@@ -15,6 +16,7 @@ app.set('port', process.env.PORT || 3500);
 
 
 // Top level Modules
+app.use(morgan('dev'));
 app.use(timeout(5000));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -49,26 +51,24 @@ app.use(express.urlencoded({extended: true}));
 // 주소 맵핑 및 라우팅 맵핑
     // 리액트로 부터 오는 API 요청
     app.get('/api/hello', (req, res) => {
-        // json 모듈을 사용시에는 json 형태를 응답 할 때는 반든시 json() 함수로 응답해야한다.
+        // json() mudule is JSON.stringify() 
         res.json({
             express: 'haha',
         }).end();
     });
 
-    app.post('/api/world', (req, res) => {
-        console.log("node: From front data  :  ");
+    app.post('/api/test', (req, res) => {
+        console.log('node: From front data  :  ');
         // This way is to receive from front data
         console.log(req.body);
         // req.body안에 프론트 axios에서 보낸 데이터가 들어있다.
         // 이 req.body에는 프론트에서 보낸 데이터가 들어가있고, 이걸 다시
         // 프론트로 그대로 보내면, 프론트에서는 res.data에 들어가 있다. (axios 기준)
 
-        if(req.body.data1 === 'It is String.'){
-            console.log('여기가아니라고?');
-            res.end(req.body.data1);
+        if(req.body.data1 === 'It is Default.'){
+            res.end('It is String.');
         }else{
-            console.log('왜 여기야?');
-            res.end("Default Data!!");
+            res.end('node : Default.');
         }
     });
 
