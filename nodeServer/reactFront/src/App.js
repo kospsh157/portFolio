@@ -1,50 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
 import {useState, useEffect} from 'react';
-import axios from 'axios';
+import styled from 'styled-components';
+import TopAndFooter from './components/presentational/TopAndFooter';
+import VerticalLine from './components/presentational/VerticalLine';
 
+// import Compoents Top and Footer
+const [TopNevi, TopBody, FooterNavi, FooterBody] = TopAndFooter;
 
-// 컴포넌트에 들어가는 변수는 컴포넌트 밖으로 빼자.
-let resultData = 'firstData';
 
 function App() {
-  const [value1, setValue1] = useState('It is Default.');
-  // You can use loading state like this. 
-  // it can be using like flag option.
-  // const [isLoading, setLoading] = useState('true');
-
-  useEffect(() => {
-    axios.post('/api/test', {
-      data1: value1,
-      data2: '통신은 단순한 객체형태나 문자열만 보낼 수 있다.',
-      data3: setValue1, // 함수 같이 큰거는 안보내진다. 함수를 가지고 통신할 순 없다.
-    }).then((res) => {
-      setValue1(res.data);
-    }).catch((err) => {
-      console.log('React : Error From useEffet() : ');
-      console.error(err);
-    })
-    return () => {
-      
-    }
-  }, [])
-  
-  // if you use loading state, you should add below
-  // if(loading) {
-  //   return (
-  //   <div className="App">
-  //     <div>
-  //       <h1>Loading...</h1>
-  //     </div>
-  //   </div>
-  //   )
-  // }
-  
+    
   return (
     <div className="App">
+      <TopNevi/>
+      <TopBody/>
       <div>
-        <button onClick={()=>setValue1('OH you click!')}> {'하하' + value1} </button>
+        하
+        <br />
+        하
+        <br />
+        하
+        <br />
+        하
+        <br />
+        하 
+        <br />
+
+
+
+
       </div>
+
+
+
+
+
+      <FooterBody>
+        <div style={{
+          width: '80vw',
+          height: '10vh',
+          padding: 0,
+          borderRight: '4px solid black',
+          borderLeft: '4px solid black',
+          boxSizing: 'border-box',
+          margin: '0px 2vw 0 2vw'
+        }}>
+          <p>Copyright 2021. SungHo Park All rights reserved</p>
+        </div>
+        
+      </FooterBody>
+      
+      <FooterNavi/>
     </div>
   );
 }
