@@ -8,8 +8,7 @@ const Square = styled.div`
     border-top: ${props => props.borderTop || 0} solid black;
     border-right: ${props => props.borderRight || 0} solid black;
     border-bottom: ${props => props.borderBottom || 0} solid black;
-    float: ${props => props.float || 'none'};
-    
+    float: ${props => props.float || 'none'};    
     box-sizing: border-box;
     background-color: #F0EDDD;
     
