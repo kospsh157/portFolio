@@ -3,9 +3,9 @@ import Square from './Square';
 
 // create Top and Footer
 const TopNevi = styled(Square)`
-  width: 16vw;
+  width: 10vw;
   height: 15vh;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
   border-right: 2px solid black;
   float: left;
   
@@ -13,7 +13,7 @@ const TopNevi = styled(Square)`
 `;
 
 const TopBody = styled(Square)`
-  width: 83vw;
+  width: 89vw;
   height: 15vh;
   border-bottom: 2px solid black;
   float: left;
@@ -28,23 +28,26 @@ const TopBody = styled(Square)`
 `;
 
 const FooterBody = styled(Square)`
-  width: 83vw;
-  height: 15vh;
+  width: 89vw;
+  height: 10vh;
   border-top: 2px solid black;
   float: left;  
   text-align: center;
 
+  // Make inner div vertically center aligned by padding
+  padding: 2vh;
+
   /* Make inner div vertically center aligned  */
-  display: flex;
-  align-items: center; 
+  // display: flex;
+  // align-items: center; 
 
 `;
 
 const FooterNavi = styled(Square)`
-  width: 16vw;
-  height: 15vh;
+  width: 10vw;
+  height: 10vh;
   border-right: 2px solid black;
-  border-top: 2px solid black;
+  // border-top: 2px solid black;
   float: left;
 `;
 

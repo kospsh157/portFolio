@@ -18,7 +18,7 @@ function App() {
       </TopBody>
 
       <SideMenu/>
-      <div style={{float: 'left', width: '83vw', height: '70vh', padding:'0', margin: '0'}}>
+      <div style={{float: 'left', width: '83vw', height: '75vh', padding:'0', margin: '0'}}>
         바디가 있어야 할 부분
       </div>
 
@@ -38,7 +38,7 @@ function App() {
         {/* inline css start point*/}
         <div style={{
           width: '80vw',
-          height: '10vh',
+          height: '6vh',
           padding: 0,
           borderRight: '2px solid black',
           borderLeft: '2px solid black',

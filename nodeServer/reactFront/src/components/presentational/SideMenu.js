@@ -4,8 +4,8 @@ import Square from './Square';
 
 
 const Menu = styled(Square)`
-    width: 16vw;
-    height: 70vh;
+    width: 10vw;
+    height: 75vh;
     border-right: 2px solid black;
     float: left;
     font-family: Verdana;
@@ -21,7 +21,7 @@ const Menu = styled(Square)`
 function SideMenu(){
     return (
         <Menu>
-            <ul style={{listStyle: 'none', width: '8vw', padding: '0'}}>
+            <ul style={{listStyle: 'none', width: '10vw', padding: '0'}}>
                 <li>Home</li>
                 <li>MyInfo</li>
                 <li>what<br/>Server</li>
