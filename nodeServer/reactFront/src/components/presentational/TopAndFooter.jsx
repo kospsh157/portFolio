@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Square from './Square';
+import Square from './Square.jsx';
 
 // create Top and Footer
 const TopNevi = styled(Square)`
@@ -13,7 +13,7 @@ const TopNevi = styled(Square)`
 `;
 
 const TopBody = styled(Square)`
-  width: 89vw;
+  width: 100vw;
   height: 15vh;
   border-bottom: 2px solid black;
   float: left;
@@ -28,7 +28,7 @@ const TopBody = styled(Square)`
 `;
 
 const FooterBody = styled(Square)`
-  width: 89vw;
+  width: 100vw;
   height: 10vh;
   border-top: 2px solid black;
   float: left;  

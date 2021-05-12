@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
-import TopAndFooter from './components/presentational/TopAndFooter';
-import VerticalLine from './components/presentational/VerticalLine';
-import SideMenu from './components/presentational/SideMenu';
+import TopAndFooter from './components/presentational/TopAndFooter.jsx';
+import SideMenu from './components/presentational/SideMenu.jsx';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
+import BodyHome from './components/presentational/BodyHome.jsx';
+import BodyMyInfo from './components/presentational/BodyMyInfo.jsx';
+import BodyServerInfo from './components/presentational/BodyServerInfo.jsx';
+import BodyFrontInfo from './components/presentational/BodyFrontInfo.jsx';
+import BodyApi from './components/presentational/BodyApi.jsx';
 
 // import Compoents Top and Footer
 const [TopNevi, TopBody, FooterNavi, FooterBody] = TopAndFooter;
@@ -12,43 +16,29 @@ function App() {
     
   return (
     <>
-      <TopNevi/>
+      
       <TopBody>
         Wellcome My Resume
       </TopBody>
 
-      <SideMenu/>
-      <div style={{float: 'left', width: '83vw', height: '75vh', padding:'0', margin: '0'}}>
-        바디가 있어야 할 부분
-      </div>
+
+      <BrowserRouter>
+        <SideMenu/>
+        {/* <div style={{float: 'left', width: '90vw', height: '75vh', padding:'0', margin: '0', backgroundColor: '#000000'}}/> */}
+        <Route exact path='/' component={BodyHome} />
+        <Route path='/myinfo' component={BodyMyInfo} />
+        <Route path='/serverinfo' component={BodyServerInfo} />
+        <Route path='/frontinfo' component={BodyFrontInfo} />
+        <Route path='/api' component={BodyApi} />
+        
 
 
 
+      </BrowserRouter>
 
-
-
-
-
-
-
-
-      <FooterNavi/>
 
       <FooterBody>
-        {/* inline css start point*/}
-        <div style={{
-          width: '80vw',
-          height: '6vh',
-          padding: 0,
-          borderRight: '2px solid black',
-          borderLeft: '2px solid black',
-          boxSizing: 'border-box',
-          display: 'inline-block',
-          // margin: '0px 1vw 0 1vw'
-        }}>
-        {/* inline css end point*/}
-          <p style={{fontSize: '1.5rem'}}>Copyright 2021. SungHo Park All rights reserved</p>
-        </div>
+          <p style={{fontSize: '1rem'}}>Copyright 2021. SungHo Park All rights reserved</p>
       </FooterBody>
     </>
   );
