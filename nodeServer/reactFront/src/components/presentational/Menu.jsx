@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import Square from './Square.jsx';
 import {Route, Link} from 'react-router-dom';
 
-
-const Menu = styled(Square)`
+const MenuStyled = styled(Square)`
     width: 10vw;
-    height: 75vh;
+    height: 85vh;
     // border-right: 2px solid black;
     float: left;
     font-family: Verdana;
@@ -17,11 +16,9 @@ const Menu = styled(Square)`
     padding: 5em 0 5em 0;
 `;
 
-
-
-function SideMenu(){
+function Menu(){
     return (
-        <Menu>
+        <MenuStyled>
             <ul style={{listStyle: 'none', width: '10vw', padding: '0'}}>
                 <Link to='/'>Home</Link>
                 <br />
@@ -34,8 +31,8 @@ function SideMenu(){
                 <Link to='/api'>API</Link>
                 <br />
             </ul>
-        </Menu>
+        </MenuStyled>
     );
 }
 
-export default SideMenu;
+export default Menu;

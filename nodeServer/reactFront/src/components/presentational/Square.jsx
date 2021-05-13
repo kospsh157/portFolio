@@ -12,7 +12,9 @@ const Square = styled.div`
     border-bottom: ${props => props.borderBottom || 0} solid black;
     float: ${props => props.float || 'none'};     */
     box-sizing: border-box;
-    background-color: #F0EDDD;
+    background-color: rgba(240, 237, 221, 0.4);
+    margin: 0;
+    padding: 0;
     
 `;
 
