@@ -15,12 +15,13 @@ const TopNevi = styled(Square)`
 const TopBody = styled(Square)`
   width: 100vw;
   height: 10vh;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid grey;
   float: left;
   text-align: center;
   font-size: 2.5em;
   font-family: Verdana;
   font-style: italic;
+  color: grey;
 
   /* Make inner text vertically center aligned (You can use this way only for one sentence.)*/
   line-height: 1.5em;
@@ -30,10 +31,10 @@ const TopBody = styled(Square)`
 const FooterBody = styled(Square)`
   width: 100vw;
   height: 5vh;
-  border-top: 2px solid black;
+  border-top: 2px solid grey;
   float: left;  
   text-align: center;
-
+  color: grey;
   // Make inner div vertically center aligned by padding
   padding: 0.5vh;
 

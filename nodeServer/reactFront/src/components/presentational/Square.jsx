@@ -15,6 +15,7 @@ const Square = styled.div`
     background-color: rgba(240, 237, 221, 0.4);
     margin: 0;
     padding: 0;
+    color: #000000;
     
 `;
 

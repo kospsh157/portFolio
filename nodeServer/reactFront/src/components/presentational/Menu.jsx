@@ -14,21 +14,22 @@ const MenuStyled = styled(Square)`
     line-height: 2.5em;
     text-align: center;
     padding: 5em 0 5em 0;
+
 `;
 
 function Menu(){
     return (
         <MenuStyled>
             <ul style={{listStyle: 'none', width: '10vw', padding: '0'}}>
-                <Link to='/'>Home</Link>
+                <Link to='/' style={{color: 'grey'}}>Home</Link>
                 <br />
-                <Link to='/myinfo'>MyInfo</Link>
+                <Link to='/myinfo' style={{color: 'grey'}}>MyInfo</Link>
                 <br />
-                <Link to='/serverinfo'>ServerInfo</Link>
+                <Link to='/serverinfo' style={{color: 'grey'}}>ServerInfo</Link>
                 <br />
-                <Link to='/frontinfo'>FrontInfo</Link>
+                <Link to='/frontinfo' style={{color: 'grey'}}>FrontInfo</Link>
                 <br />
-                <Link to='/api'>API</Link>
+                <Link to='/api' style={{color: 'grey'}}>API</Link>
                 <br />
             </ul>
         </MenuStyled>
