@@ -1,7 +1,7 @@
 // navigation 
 import styled from 'styled-components';
 import Square from './Square.jsx';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const MenuStyled = styled(Square)`
     width: 10vw;
@@ -18,6 +18,7 @@ const MenuStyled = styled(Square)`
 `;
 
 function Menu(){
+
     return (
         <MenuStyled>
             <ul style={{listStyle: 'none', width: '10vw', padding: '0'}}>

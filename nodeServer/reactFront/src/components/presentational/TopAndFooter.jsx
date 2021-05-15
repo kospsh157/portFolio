@@ -9,7 +9,6 @@ const TopNevi = styled(Square)`
   border-right: 2px solid black;
   float: left;
   
-
 `;
 
 const TopBody = styled(Square)`
@@ -35,6 +34,7 @@ const FooterBody = styled(Square)`
   float: left;  
   text-align: center;
   color: grey;
+
   // Make inner div vertically center aligned by padding
   padding: 0.5vh;
 
@@ -48,8 +48,10 @@ const FooterNavi = styled(Square)`
   width: 10vw;
   height: 5vh;
   border-right: 2px solid black;
+
   // border-top: 2px solid black;
   float: left;
+
 `;
 
 const TopAndFooter = [TopNevi, TopBody, FooterNavi, FooterBody];

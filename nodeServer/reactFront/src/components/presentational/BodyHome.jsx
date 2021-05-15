@@ -5,7 +5,6 @@ const BodyHomeStyled = styled(BodyStyled)`
     text-align: center;
     padding: 20vh 10vw 20vh 0;
 
-
 `;
 
 function BodyHome(){
