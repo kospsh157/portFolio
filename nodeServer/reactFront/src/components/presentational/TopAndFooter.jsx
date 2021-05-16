@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 import Square from './Square.jsx';
 
-// create Top and Footer
-const TopNevi = styled(Square)`
-  width: 10vw;
-  height: 10vh;
-  // border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  float: left;
-  
-`;
-
+// Top and Footer
 const TopBody = styled(Square)`
   width: 100vw;
   height: 10vh;
@@ -21,6 +12,7 @@ const TopBody = styled(Square)`
   font-family: Verdana;
   font-style: italic;
   color: grey;
+  background-color: rgba(240, 237, 221, 0.6);
 
   /* Make inner text vertically center aligned (You can use this way only for one sentence.)*/
   line-height: 1.5em;
@@ -34,9 +26,10 @@ const FooterBody = styled(Square)`
   float: left;  
   text-align: center;
   color: grey;
+  background-color: rgba(240, 237, 221, 0.6);
 
   // Make inner div vertically center aligned by padding
-  padding: 0.5vh;
+  padding: 0.1vh;
 
   /* Make inner div vertically center aligned  */
   // display: flex;
@@ -44,16 +37,6 @@ const FooterBody = styled(Square)`
 
 `;
 
-const FooterNavi = styled(Square)`
-  width: 10vw;
-  height: 5vh;
-  border-right: 2px solid black;
-
-  // border-top: 2px solid black;
-  float: left;
-
-`;
-
-const TopAndFooter = [TopNevi, TopBody, FooterNavi, FooterBody];
+const TopAndFooter = [TopBody,  FooterBody];
 
 export default TopAndFooter;

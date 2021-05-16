@@ -13,7 +13,7 @@ const MenuStyled = styled(Square)`
     font-size: 1.5em;
     line-height: 2.5em;
     text-align: center;
-    padding: 5em 0 5em 0;
+    padding: 20vh 1vw 20vh 1vw;
 
 `;
 
@@ -21,7 +21,7 @@ function Menu(){
 
     return (
         <MenuStyled>
-            <ul style={{listStyle: 'none', width: '10vw', padding: '0'}}>
+            <ul style={{ listStyle: 'none', width: '8vw', padding: '0', margin: '0' }}>
                 <Link to='/' style={{color: 'grey'}}>Home</Link>
                 <br />
                 <Link to='/myinfo' style={{color: 'grey'}}>MyInfo</Link>

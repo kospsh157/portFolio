@@ -5,11 +5,7 @@ const BodyServerStyled = styled(BodyStyled)`
     text-align: center;
     padding: 0vh 10vw 20vh 0;
 
-
 `;
-
-
-
 
 function BodyServer(){
     

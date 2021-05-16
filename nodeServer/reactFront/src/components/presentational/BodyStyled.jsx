@@ -6,8 +6,9 @@ const BodyStyled = styled(Square)`
     height: 85vh;
     float: left;
     text-align: center;
-    padding: 0vh 10vw 20vh 0;
+    padding: 0vh 10vw 0vh 0vh;
     overflow: auto;
+    color: #000000;
 `;
 
 export default BodyStyled;
