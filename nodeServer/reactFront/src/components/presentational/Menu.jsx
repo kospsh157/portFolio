@@ -15,6 +15,11 @@ const MenuStyled = styled(Square)`
     text-align: center;
     padding: 20vh 1vw 20vh 1vw;
 
+     /* small desktop horizontal */
+     @media only screen and (max-width : 1100px) {
+        display: none;
+    }
+
 `;
 
 function Menu(){
