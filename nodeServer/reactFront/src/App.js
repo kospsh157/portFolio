@@ -3,7 +3,7 @@ import TopAndFooter from './components/presentational/TopAndFooter.jsx';
 import SideMenu from './components/presentational/Menu.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 import BodyHome from './components/presentational/BodyHome.jsx';
-import BodyMy from './components/presentational/BodyMy.jsx';
+import BodyMyInfo from './components/presentational/BodyMyInfo.jsx';
 import BodyServer from './components/presentational/BodyServer.jsx';
 import BodyFront from './components/presentational/BodyFront.jsx';
 import BodyApi from './components/presentational/BodyApi.jsx';
@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <SideMenu/>
         <Route exact path='/' component={BodyHome} />
-        <Route path='/myinfo' component={BodyMy} />
+        <Route path='/myinfo' component={BodyMyInfo} />
         <Route path='/serverinfo' component={BodyServer} />
         <Route path='/frontinfo' component={BodyFront} />
         <Route path='/api' component={BodyApi} />

@@ -17,7 +17,7 @@ const Square = styled.div`
     padding: 0;
     color: #000000;
     font-size: 1.5em;
-
+    font-family: Verdana;
 `;
 
 export default Square;

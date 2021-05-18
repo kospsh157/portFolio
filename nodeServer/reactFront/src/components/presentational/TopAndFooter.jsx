@@ -5,27 +5,25 @@ import Square from './Square.jsx';
 const TopBody = styled(Square)`
   width: 100vw;
   height: 10vh;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #808080;
   float: left;
   text-align: center;
-  font-size: 2.5em;
-  font-family: Verdana;
-  font-style: italic;
-  color: grey;
+  font-size: 2em;
+  color: #808080;
   background-color: rgba(240, 237, 221, 0.6);
 
-  /* Make inner text vertically center aligned (You can use this way only for one sentence.)*/
-  line-height: 1.5em;
 
+  /* Make inner text vertically center aligned (You can use this way only for one sentence.)*/
+  padding: 2vh 0 2vh 0;
 `;
 
 const FooterBody = styled(Square)`
   width: 100vw;
   height: 5vh;
-  border-top: 2px solid grey;
+  border-top: 2px solid #808080;
   float: left;  
   text-align: center;
-  color: grey;
+  color: #808080;
   background-color: rgba(240, 237, 221, 0.6);
 
   // Make inner div vertically center aligned by padding
@@ -34,7 +32,6 @@ const FooterBody = styled(Square)`
   /* Make inner div vertically center aligned  */
   // display: flex;
   // align-items: center; 
-
 `;
 
 const TopAndFooter = [TopBody,  FooterBody];
