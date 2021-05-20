@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StickyP = styled.h3`
+const StickyStyled = styled.div`
     padding: 1vh 10vw 5vh 0;
     margin: 0 0 5vh 0;
     width: 89vw;
@@ -15,6 +15,7 @@ const StickyP = styled.h3`
     &:hover {
         color: #000000;
     };
+    
     /* small desktop horizontal */
     @media only screen and (max-width : 1100px) {
         width: 100vw;
@@ -22,5 +23,14 @@ const StickyP = styled.h3`
     }
 `;
 
-export default StickyP;
-{/* <div style="cursor:pointer;" onclick="window.scrollTo(0,0);">TOP</div> */}
+function StickyH3({ text }) {
+    const top = document.getElementById('root').scrollTo(0, 0);
+    return (
+        <StickyStyled onClick = { top }>
+            {text}
+        </StickyStyled>
+    );
+}
+
+
+export default StickyH3;

@@ -7,7 +7,7 @@ const BodyStyled = styled(Square)`
     height: 85vh;
     float: left;
     text-align: center;
-    padding: 0vh 10vw 0vh 0vh;
+    padding: 0 10vw 10vh 0;
     overflow: auto;
     color: #000000;
     font-family: Verdana;
@@ -16,8 +16,7 @@ const BodyStyled = styled(Square)`
     /* small desktop horizontal */
     @media only screen and (max-width : 1100px) {
         width: 100vw;
-        padding: 0 0 0 0;
-    }
+        padding: 0 0 10vh 0;
 `;
 
 export default BodyStyled;

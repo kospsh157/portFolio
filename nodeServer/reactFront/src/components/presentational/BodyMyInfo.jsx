@@ -12,8 +12,7 @@ function BodyMyInfo() {
     
     return(
         <MyInfoStyled>
-            <StickyH3>MyInfo</StickyH3>
-            <br />
+            <StickyH3 text = 'MyInfo'/>
             <h3>Diploma in Korea</h3>
                 <p>I graduated from ShinGu College in Korea.</p>
                 <CustomLink to = {{ pathname: 'https://english.shingu.ac.kr/index.do' }}
@@ -75,6 +74,20 @@ function BodyMyInfo() {
                     height = '100vh'
                 />
                 </div>
+                <div style = {{ paddingRight: '2vw', display: 'inline-block' }}>
+                  <img src = '/images/react.png' 
+                    alt = 'I can use React' 
+                    width = '100%'
+                    height = '100vh'
+                />
+                </div>
+                <br /><br />
+                <p>I want to work on Node Backend, but it's OK with React Front too.
+                    <br />
+                    But I'm not a great full-stack developer. I am a novice developer.
+                    <br />
+                    And I know how to use Linux a little.</p>
+                    <br />
         </MyInfoStyled>
     );
 }

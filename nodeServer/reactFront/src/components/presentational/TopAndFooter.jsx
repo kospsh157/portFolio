@@ -11,7 +11,8 @@ const TopBody = styled(Square)`
   font-size: 2em;
   color: #808080;
   background-color: rgba(240, 237, 221, 0.6);
-
+  box-shadow: 1px 1px 3px 1px #000000;
+  
 
   /* Make inner text vertically center aligned (You can use this way only for one sentence.)*/
   padding: 2vh 0 2vh 0;
@@ -25,7 +26,7 @@ const FooterBody = styled(Square)`
   text-align: center;
   color: #808080;
   background-color: rgba(240, 237, 221, 0.6);
-
+  box-shadow: 1px 1px 3px 1px #000000;
   // Make inner div vertically center aligned by padding
   padding: 0.1vh;
 
