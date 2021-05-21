@@ -8,7 +8,9 @@ const BodyStyled = styled(Square)`
     float: left;
     text-align: center;
     padding: 0 10vw 10vh 0;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
     color: #000000;
     font-family: Verdana;
     

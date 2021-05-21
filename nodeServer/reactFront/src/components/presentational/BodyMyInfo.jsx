@@ -1,7 +1,10 @@
+import { useRef } from 'react';
 import styled from 'styled-components';
 import BodyStyled from './BodyStyled';
 import CustomLink from './customTags/CustomLink.jsx';
 import StickyH3 from './customTags/StickyH3.jsx';
+
+
 
 const MyInfoStyled = styled(BodyStyled)`
     
@@ -9,10 +12,11 @@ const MyInfoStyled = styled(BodyStyled)`
 `;
 
 function BodyMyInfo() {
-    
+    const body = useRef();
+
     return(
-        <MyInfoStyled>
-            <StickyH3 text = 'MyInfo'/>
+        <MyInfoStyled ref = { body }>
+            <StickyH3 text = '-MyInfo-' />
             <h3>Diploma in Korea</h3>
                 <p>I graduated from ShinGu College in Korea.</p>
                 <CustomLink to = {{ pathname: 'https://english.shingu.ac.kr/index.do' }}
