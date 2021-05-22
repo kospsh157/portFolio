@@ -10,7 +10,7 @@ function BodyFront(){
     
     return(
         <BodyFrontStyled>
-
+            
         </BodyFrontStyled>
     );
 }

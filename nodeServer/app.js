@@ -3,6 +3,7 @@ const timeout = require('connect-timeout');
 const app = express();
 const fs = require('fs').promises;
 const morgan = require('morgan');
+const path = require('path');
 
 // 포트 설정 
 app.set('port', process.env.PORT || 3500);
@@ -20,32 +21,52 @@ app.use(morgan('dev'));
 app.use(timeout(5000));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-    
-    // 시간 초과 Test Module
-    app.use('/timedoutTest', (req, res, next) => {
-        console.log('Entering Timed Out Test Statement');
-        setTimeout(() => {
-            if(req.timedout){
-                // req.에timedout 프로퍼티가 있다면,
-                // 바로 다음 모듈로 넘겨서 결국 에러 핸들러 까지 가게 한다.
-                next();
-            }else{
-                // next();
-                // 만약 여기까지 와도, next()가 없다면, 시간초과이다.
-                // 하나의 요청에 반드시 하나의 res.send()가 있어야 한다.
-            }
-        }, 6000); // 현재 타임아웃 기준이 5초이다. 
-        // 따라서 여기서 5초 이전으로 하면 성공하고 5초 이상으로하면 요청초과된다.
-    });
+
+// 빌드한 리액트 정적파일 연결
+console.log(__dirname); // /Users/psh/Desktop/portFolio/nodeServer
+app.use(express.static(path.join(__dirname, '/reactFront/build')));    
+
+// 시간 초과 Test Module
+app.use('/timedoutTest', (req, res, next) => {
+    console.log('Entering Timed Out Test Statement');
+    setTimeout(() => {
+        if(req.timedout){
+            // req.에timedout 프로퍼티가 있다면,
+            // 바로 다음 모듈로 넘겨서 결국 에러 핸들러 까지 가게 한다.
+            next();
+        }else{
+            // next();
+            // 만약 여기까지 와도, next()가 없다면, 시간초과이다.
+            // 하나의 요청에 반드시 하나의 res.send()가 있어야 한다.
+        }
+    }, 6000); // 현재 타임아웃 기준이 5초이다. 
+    // 따라서 여기서 5초 이전으로 하면 성공하고 5초 이상으로하면 요청초과된다.
+});
 
 
 
-// 사용할 모듈
-    // 정적 파일로 보여주기
-    app.get('/', express.static(__dirname + '/public'));
-    // index.html 를 보여주고 싶다면, index.html 적으면 안된다.
-    // 그냥 public까지 경로만 지정해줘야 한다.
-    // 당연히 public 폴더 안에, 파일 이름은 index로 되어 있어야 한다.
+
+// 위에서 이미 빌드된 리액트 폴더를 연결했기 때문에 더이상의 주소맵핑-모듈연결은 테스트 용도로만 사용한다.
+app.get('*', (req, res) => {
+    // console.log(path.join(__dirname, '/reactFront/build/index.html'));
+    res.sendFile(path.join(__dirname, '/reactFront/build/index.html'));
+    // try {
+    //     fs.readFile(__dirname + '/reactFront/build/index.html')
+    //         .then(data => {
+    //             res.end(data);
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    //     //res.sendFile(path.join(__dirname, '/reactFront/build/index.html'));
+    // } catch (err) {
+    //     console.log('/ 페이지 로딩중 오류');
+    //     console.log(err);
+    // }
+});
+// index.html 를 보여주고 싶다면, index.html 적으면 안된다.
+// 그냥 public까지 경로만 지정해줘야 한다.
+// 당연히 public 폴더 안에, 파일 이름은 index로 되어 있어야 한다.
 
 
 // 주소 맵핑 및 라우팅 맵핑
@@ -125,5 +146,5 @@ app.use( (err, req, res, next) => {
 
 
 app.listen(app.get('port'), () => {
-    console.log(`현재 ${app.get('port')}포트에서 서버 대기중...`);
+    console.log(`현재 ${app.get('port')}port is waiting...`);
 });

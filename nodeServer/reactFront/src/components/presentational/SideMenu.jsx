@@ -1,29 +1,34 @@
 // navigation 
 import styled from 'styled-components';
 import Square from './Square.jsx';
-import {Link} from 'react-router-dom';
 import CustomLink from './customTags/CustomLink.jsx';
 
-const MenuStyled = styled(Square)`
+const SideMenuStyled = styled(Square)`
     width: 10vw;
     height: 85vh;
-    // border-right: 2px solid black;
     float: left;
     font-size: 1.5em;
     line-height: 2.5em;
     text-align: center;
     padding: 20vh 1vw 20vh 1vw;
-    
+    background-color: #ffffff;
+
     /* small desktop horizontal */
     @media only screen and (max-width : 1100px) {
-        display: none;
+        display: ${props => props.toggle || 'none' };
+        z-index: 2;
+        width: 40vw;
+        background-color: rgba(255, 255, 255, 0);
+        position: absolute;
+        top: 10vh;
+        left: 0;
     }
 `;
 
-function Menu() {
+function SideMenu({ toggle }) {
 
     return (
-        <MenuStyled>
+        <SideMenuStyled toggle = { toggle }>
             <ul style={{ listStyle: 'none', width: '8vw', padding: '0', margin: '0' }}>
                 <CustomLink to='/' >Home</CustomLink>
                 <br />
@@ -36,8 +41,8 @@ function Menu() {
                 <CustomLink to='/api' >API</CustomLink>
                 <br />
             </ul>
-        </MenuStyled>
+        </SideMenuStyled>
     );
 }
 
-export default Menu;
+export default SideMenu;
