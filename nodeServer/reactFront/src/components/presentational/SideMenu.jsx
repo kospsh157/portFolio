@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Square from './Square.jsx';
 import CustomLink from './customTags/CustomLink.jsx';
 
+
 const SideMenuStyled = styled(Square)`
     width: 10vw;
     height: 85vh;
@@ -14,22 +15,29 @@ const SideMenuStyled = styled(Square)`
     background-color: #ffffff;
 
     /* small desktop horizontal */
-    @media only screen and (max-width : 1100px) {
+    @media only screen and (max-width: 1100px) {
         display: ${props => props.toggle || 'none' };
         z-index: 2;
-        width: 40vw;
-        background-color: rgba(255, 255, 255, 0);
+        width: 20vw;
+        background-color: rgba(213, 217, 224, 0.5);
         position: absolute;
         top: 10vh;
         left: 0;
+        font-size: 1.5em;
     }
 `;
 
-function SideMenu({ toggle }) {
+// app 에서 상탯값을 toggle로 받아서 판단함.
+// toggle 값은 'none' or 'inline' 임.
+function SideMenu({toggle}) {
+    let widthSize = '8vw';
+    if(toggle === 'inline') {
+        widthSize = '1vw';
+    }
 
     return (
-        <SideMenuStyled toggle = { toggle }>
-            <ul style={{ listStyle: 'none', width: '8vw', padding: '0', margin: '0' }}>
+        <SideMenuStyled toggle = {toggle} >
+            <ul style={{listStyle: 'none', width: {widthSize}, padding: '0', margin: '0'}} >
                 <CustomLink to='/' >Home</CustomLink>
                 <br />
                 <CustomLink to='/myinfo' >MyInfo</CustomLink>

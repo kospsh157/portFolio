@@ -4,7 +4,7 @@ import Square from '../Square';
 const MenuButtonStyled = styled(Square)`
     width: 1em;
     height: 1em;
-    background-color: rgba(255, 255, 255, 0);
+    // background-color: rgba(255, 255, 255, 0);
     float: left;
     display: none;
 
@@ -14,13 +14,11 @@ const MenuButtonStyled = styled(Square)`
     }
 `;
 
-function MenuButton({ sidemenu }) {
-    console.log(sidemenu);
+function MenuButton({funcData}) {
     
     return (
-        <MenuButtonStyled>
+        <MenuButtonStyled onClick = {funcData} >
             <img src = '/images/menu.png' width = '50%' />
-
         </MenuButtonStyled>
     );
 }

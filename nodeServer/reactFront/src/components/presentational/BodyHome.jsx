@@ -4,7 +4,7 @@ import CustomLink from './customTags/CustomLink';
 
 const BodyHomeStyled = styled(BodyStyled)`
     text-align: center;
-    padding-top: 10vh;
+    padding-top: 5vh;
 `;
 
 function BodyHome(){

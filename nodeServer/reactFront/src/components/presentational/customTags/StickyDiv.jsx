@@ -7,8 +7,11 @@ const StickyStyled = styled.div`
     height: auto;
     padding: 0 0 0 0;
     margin: 0 0 5vh 0;
+    cursor: pointer;
+    
     /* display: inline; */
     position: sticky;
+
     top: 0;
     font-family: Verdana;
     color: rgba(128, 128, 128, 0.5);
@@ -23,7 +26,7 @@ const StickyStyled = styled.div`
     }
 `;
 
-function StickyH3({ text, parent }) {
+function StickyDiv({ text, parent }) {
 
     return (
         <StickyStyled onClick = { () => parent.current.scrollTo(0, 0) }>
@@ -32,4 +35,4 @@ function StickyH3({ text, parent }) {
     );
 }
 
-export default StickyH3;
+export default StickyDiv;

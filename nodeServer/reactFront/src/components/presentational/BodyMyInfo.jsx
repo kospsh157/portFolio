@@ -1,20 +1,20 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import BodyStyled from './BodyStyled';
 import CustomLink from './customTags/CustomLink.jsx';
-import StickyH3 from './customTags/StickyH3.jsx';
+import StickyDiv from './customTags/StickyDiv.jsx';
 
 const MyInfoStyled = styled(BodyStyled)`
    
 
 `;
 
-function BodyMyInfo() {
+function BodyMyInfo({ menuClick }) {
     const body = useRef();
-
+    
     return(
         <MyInfoStyled ref = { body }>
-            <StickyH3 text = '-MyInfo-' parent = { body }/>
+            <StickyDiv text = '-MyInfo-' parent = { body }/>
             <h3>Diploma in Korea</h3>
                 <p>I graduated from ShinGu College in Korea.</p>
                 <CustomLink to = {{ pathname: 'https://english.shingu.ac.kr/index.do' }}
