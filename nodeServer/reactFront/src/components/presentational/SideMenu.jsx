@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Square from './Square.jsx';
 import CustomLink from './customTags/CustomLink.jsx';
 
-
 const SideMenuStyled = styled(Square)`
     width: 10vw;
     height: 85vh;
@@ -36,18 +35,18 @@ function SideMenu({toggle}) {
     }
 
     return (
-        <SideMenuStyled toggle = {toggle} >
-            <ul style={{listStyle: 'none', width: {widthSize}, padding: '0', margin: '0'}} >
-                <CustomLink to='/' >Home</CustomLink>
-                <br />
-                <CustomLink to='/myinfo' >MyInfo</CustomLink>
-                <br />
-                <CustomLink to='/serverinfo' >ServerInfo</CustomLink>
-                <br />
-                <CustomLink to='/frontinfo' >FrontInfo</CustomLink>
-                <br />
-                <CustomLink to='/api' >API</CustomLink>
-                <br />
+        <SideMenuStyled toggle = {toggle}>
+            <ul style={{listStyle: 'none', width: {widthSize}, padding: '0', margin: '0'}}>
+                <CustomLink to='/'>Home</CustomLink>
+                <br/>
+                <CustomLink to='/myinfo'>MyInfo</CustomLink>
+                <br/>
+                <CustomLink to='/serverinfo'>ServerInfo</CustomLink>
+                <br/>
+                <CustomLink to='/frontinfo'>FrontInfo</CustomLink>
+                <br/>
+                <CustomLink to='/api'>API</CustomLink>
+                <br/>
             </ul>
         </SideMenuStyled>
     );

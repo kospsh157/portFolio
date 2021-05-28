@@ -2,13 +2,11 @@ import styled from 'styled-components';
 import BodyStyled from './BodyStyled.jsx';
 
 const BodyApiStyled = styled(BodyStyled)`
-
-
 `;
 
-function BodyApi(){
+function BodyApi() {
     
-    return(
+    return (
         <BodyApiStyled>
 
         </BodyApiStyled>

@@ -8,10 +8,7 @@ const StickyStyled = styled.div`
     padding: 0 0 0 0;
     margin: 0 0 5vh 0;
     cursor: pointer;
-    
-    /* display: inline; */
     position: sticky;
-
     top: 0;
     font-family: Verdana;
     color: rgba(128, 128, 128, 0.5);
@@ -20,16 +17,16 @@ const StickyStyled = styled.div`
         color: #000000;
     };
     
-    /* small desktop horizontal */
-    @media only screen and (max-width : 1100px) {
+    /* small display horizontal */
+    @media only screen and (max-width: 1100px) {
         width: 100vw;
     }
 `;
 
-function StickyDiv({ text, parent }) {
+function StickyDiv({text, parent}) {
 
     return (
-        <StickyStyled onClick = { () => parent.current.scrollTo(0, 0) }>
+        <StickyStyled onClick = {() => parent.current.scrollTo(0, 0)}>
             {text}
         </StickyStyled>
     );
