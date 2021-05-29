@@ -23,7 +23,7 @@ function BodyMyInfo({ menuClick }) {
                 Here! ShinGu College WebSite
                 </CustomLink>              
                 <br /><br />               
-                <img src = '/images/myDiploma.jpg' 
+                <img src = '/images/myDiploma.png' 
                     alt = 'myDiplomaPaperImage'
                     width = '70%'
                     height = 'auto'
