@@ -19,10 +19,10 @@ function BodyHome(){
                 <br /> 
                 <CustomLink to = {{ pathname: 'https://github.com/kospsh157/portFolio' }}
                     target = '_blank'
-                >If you want to see the code, please press it.</CustomLink></h2>
+                >Git repository Here!</CustomLink></h2>
             <h2>Thank you.</h2>
-            <p style = {{ fontSize: '0.8em' }}>(This site is optimized for PC browsers
-            but it is made as a responsive site, so you can view it on mobile.)</p>
+            <p style = {{fontSize: '0.8em', color: 'red'}}>(This site was created by only me from start to finish, 
+            and the git repository proves that this fact is not false.)</p>
         </BodyHomeStyled>
     );
 }

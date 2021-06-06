@@ -4,9 +4,8 @@ import SideMenu from './components/presentational/SideMenu.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 import BodyHome from './components/presentational/BodyHome.jsx';
 import BodyMyInfo from './components/presentational/BodyMyInfo.jsx';
-import BodyServer from './components/presentational/BodyServer.jsx';
-import BodyFront from './components/presentational/BodyFront.jsx';
-import BodyApi from './components/presentational/BodyApi.jsx';
+import BodySiteInfo from './components/presentational/BodySiteInfo.jsx';
+import BodyBoard from './components/presentational/BodyBoard.jsx';
 import MenuButton from './components/presentational/customTags/MenuButton.jsx';
 
 // import Compoents Top and Footer
@@ -46,9 +45,8 @@ function App() {
         <SideMenu toggle = {menuButton} />
         <Route exact path = '/' component={BodyHome} />
         <Route path = '/myinfo' component={BodyMyInfo} />
-        <Route path = '/serverinfo' component={BodyServer} />
-        <Route path = '/frontinfo' component={BodyFront} />
-        <Route path = '/api' component={BodyApi} />
+        <Route path = '/siteinfo' component={BodySiteInfo} />
+        <Route path = '/board' component={BodyBoard} />
       </BrowserRouter>
 
       <FooterBody>

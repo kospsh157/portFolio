@@ -41,11 +41,9 @@ function SideMenu({toggle}) {
                 <br/>
                 <CustomLink to='/myinfo'>MyInfo</CustomLink>
                 <br/>
-                <CustomLink to='/serverinfo'>ServerInfo</CustomLink>
+                <CustomLink to='/siteinfo'>SiteInfo</CustomLink>
                 <br/>
-                <CustomLink to='/frontinfo'>FrontInfo</CustomLink>
-                <br/>
-                <CustomLink to='/api'>API</CustomLink>
+                <CustomLink to='/board'>Board</CustomLink>
                 <br/>
             </ul>
         </SideMenuStyled>
