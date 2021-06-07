@@ -18,7 +18,7 @@ function MenuButton({funcData}) {
     
     return (
         <MenuButtonStyled onClick = {funcData} >
-            <img src = '/images/menu.png' width = '50%' />
+            <img src = '/images/menu.png' width = '50%' alt = 'menu button'/>
         </MenuButtonStyled>
     );
 }

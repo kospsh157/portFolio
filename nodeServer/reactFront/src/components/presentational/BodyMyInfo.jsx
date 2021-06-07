@@ -29,7 +29,7 @@ function BodyMyInfo({ menuClick }) {
                     height = 'auto'
                 />
                 <br /><br />
-                <h3>About me</h3>
+            <h3>About me</h3>
                 <p>
                 I have been immigrating from Korea to Canada for about a year.
                 <br />
@@ -46,7 +46,7 @@ function BodyMyInfo({ menuClick }) {
                 I know simple life conversation and work terms. However, it is true that it is very difficult to write a report.
                 </p>               
                 <br /><br />
-                <h3>Skills</h3>
+            <h3>Skills</h3>
                 {/* 각각 div를 만들어준 이유 : 패딩값을 줘서 이미지 사이 간격을 일정하게 주기 위함이다. */}
                 <div style = {{paddingRight: '2vw', display: 'inline-block', width: '12rem'}}>
                     <img src = '/images/javascript.png'

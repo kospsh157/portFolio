@@ -8,7 +8,7 @@ function BodyBoard() {
     
     return (
         <BodyBoardStyled>
-
+            
         </BodyBoardStyled>
     );
 }

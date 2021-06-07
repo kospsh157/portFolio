@@ -1,22 +1,26 @@
 import React, {useState, useEffect, useRef} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import TopAndFooter from './components/presentational/TopAndFooter.jsx';
 import SideMenu from './components/presentational/SideMenu.jsx';
-import {BrowserRouter, Route} from 'react-router-dom';
 import BodyHome from './components/presentational/BodyHome.jsx';
 import BodyMyInfo from './components/presentational/BodyMyInfo.jsx';
 import BodySiteInfo from './components/presentational/BodySiteInfo.jsx';
 import BodyBoard from './components/presentational/BodyBoard.jsx';
 import MenuButton from './components/presentational/customTags/MenuButton.jsx';
+import Err404Page from './components/presentational/Err404Page.jsx';
+import Err408Page from './components/presentational/Err408Page.jsx';
+import Err500Page from './components/presentational/Err500Page.jsx';
+import ErrUnknownPage from './components/presentational/ErrUnknownPage.jsx';
+
+
 
 // import Compoents Top and Footer
 const [TopBody, FooterBody] = TopAndFooter;
 
 function App() {
-
   // state of menuButton
   const [menuButton, setMenuButton] = useState('none');
   const clickMenuButton = () => {
-    console.log(menuButton);
     if(menuButton !== 'none') {
       return setMenuButton('none');
     }else{
@@ -40,13 +44,19 @@ function App() {
         <MenuButton funcData = {clickMenuButton} />
         Wellcome My Resume
       </TopBody>
-      
+    
       <BrowserRouter>
         <SideMenu toggle = {menuButton} />
-        <Route exact path = '/' component={BodyHome} />
-        <Route path = '/myinfo' component={BodyMyInfo} />
-        <Route path = '/siteinfo' component={BodySiteInfo} />
-        <Route path = '/board' component={BodyBoard} />
+        <Switch>
+          <Route exact path = '/' component = {BodyHome} />
+          <Route exact path = '/myinfo' component = {BodyMyInfo} />
+          <Route exact path = '/siteinfo' component = {BodySiteInfo} />
+          <Route exact path = '/board'  component = {BodyBoard} />
+          <Route exant path = '/err404' component = {Err404Page} />
+          <Route exant path = '/err408' component = {Err408Page} />
+          <Route exant path = '/err500' component = {Err500Page} />
+          <Route component = {ErrUnknownPage} />
+        </Switch>
       </BrowserRouter>
 
       <FooterBody>
