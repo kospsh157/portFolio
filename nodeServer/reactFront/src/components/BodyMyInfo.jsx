@@ -1,20 +1,18 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import styled from 'styled-components';
 import BodyStyled from './BodyStyled';
 import CustomLink from './customTags/CustomLink.jsx';
 import StickyDiv from './customTags/StickyDiv.jsx';
 
 const MyInfoStyled = styled(BodyStyled)`
-   
-
 `;
 
 function BodyMyInfo({ menuClick }) {
-    const body = useRef();
+    const myInfo = useRef();
     
     return(
-        <MyInfoStyled ref = {body}>
-            <StickyDiv text = '-MyInfo-' parent = {body} />
+        <MyInfoStyled ref = {myInfo}>
+            <StickyDiv text = '-MyInfo-' parent = {myInfo} />
             <h3>Diploma in Korea</h3>
                 <p>I graduated from ShinGu College in Korea.</p>
                 <CustomLink to = {{pathname: 'https://english.shingu.ac.kr/index.do'}}
@@ -48,31 +46,31 @@ function BodyMyInfo({ menuClick }) {
                 <br /><br />
             <h3>Skills</h3>
                 {/* 각각 div를 만들어준 이유 : 패딩값을 줘서 이미지 사이 간격을 일정하게 주기 위함이다. */}
-                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '12rem'}}>
+                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '10vw'}}>
                     <img src = '/images/javascript.png'
                         alt = 'I can use javascript' 
                         width = '100%'
                     />
                 </div>
-                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '12rem'}}>
+                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '10vw'}}>
                     <img src = '/images/typescript.png' 
                         alt = 'I can use typescript'
                         width = '100%'
                     />
                 </div>
-                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '12rem'}}>
+                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '10vw'}}>
                     <img src = '/images/react.png' 
                         alt = 'I can use React' 
                         width = '100%'
                     />
                 </div>
-                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '12rem'}}>
+                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '10vw'}}>
                     <img src = '/images/nodejs.png' 
                         alt = 'I can use nodeJS' 
                         width = '100%'
                     />
                 </div>
-                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '12rem'}}>
+                <div style = {{paddingRight: '2vw', display: 'inline-block', width: '10vw'}}>
                     <img src = '/images/AWS.png' 
                         alt = 'I can use AWS' 
                         width = '100%'

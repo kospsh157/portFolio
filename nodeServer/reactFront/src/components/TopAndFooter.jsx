@@ -8,7 +8,7 @@ const TopBody = styled(Square)`
   border-bottom: 2px solid #808080;
   float: left;
   text-align: center;
-  font-size: 2em;
+  font-size: 3rem;
   color: #808080;
   background-color: rgba(240, 237, 221, 0.6);
   box-shadow: 1px 1px 3px 1px #000000;
@@ -18,7 +18,9 @@ const TopBody = styled(Square)`
 
   /* small horizontal */
   @media only screen and (max-width : 1100px) {
-    padding: 1vw 4vw 1vw 1vw;
+    // Since there is a menu button on the left, 
+    // add a padding value to the right of the title to align the title to the center.
+    padding: 1vh 4vw 1vh 0; 
   }
 
 `;
@@ -32,15 +34,7 @@ const FooterBody = styled(Square)`
   color: #808080;
   background-color: rgba(240, 237, 221, 0.6);
   box-shadow: 1px 1px 3px 1px #000000;
-  font-size: 0.8em;
-
-  // Make inner div vertically center aligned by padding
-  //padding: 0.1vh;
-
-
-  /* Make inner div vertically center aligned  */
-  // display: flex;
-  // align-items: center; 
+  font-size: 1rem;
 
   /* mobile horizontal */
   @media only screen and (max-width : 360px) {

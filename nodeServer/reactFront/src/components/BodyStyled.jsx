@@ -12,14 +12,15 @@ const BodyStyled = styled(Square)`
     color: #000000;
     font-family: Verdana;
     scrollbar-width: none;
-    margin: 0 9vw 0 0;
-    padding: 0 2vw 0 2vw;
+    font-size: 2rem; // Set all body font-size to 20px;
+    padding: 0 7vw 0 7vw;
     z-index: 1;
-
+    
+    
     /* small desktop horizontal */
     @media only screen and (max-width : 1100px) {
         width: 100vw;
-        position: relative;
+        //position: relative;
     }
 `;
 

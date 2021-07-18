@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import BodyStyled from './BodyStyled.jsx';
 import StickyDiv from './customTags/StickyDiv.jsx';
-import {useRef} from 'react';
+import { useRef } from 'react';
 
 const BodySiteInfoStyled = styled(BodyStyled)`
 
@@ -12,7 +12,7 @@ function BodySiteInfo() {
 
     return(
         <BodySiteInfoStyled ref = {siteInfo}>
-            <StickyDiv text = '-SiteInfo-' parent = {siteInfo} />
+            <StickyDiv text = '-SiteInfo-' parent = {siteInfo}/>
             <h3>Frontend</h3>
                 <p>
                 This site is built to be responsive.
