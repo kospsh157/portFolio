@@ -47,9 +47,6 @@ function App() {
 
   return (
     <>
-    
-
-    
       <TopBody>
         <MenuButton funcData = {clickMenuButton} />
         Wellcome My Resume
@@ -71,10 +68,6 @@ function App() {
       <FooterBody>
           <p>Copyright 2021. SungHo Park All rights reserved</p>
       </FooterBody>
-
-
-
-      
     </>
   );
 }

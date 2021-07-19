@@ -40,20 +40,7 @@ function BodySiteInfo() {
                 and I'm still learning by doing safety tests myself.
                 <br />
                 </p>
-
-
-
-            
-
-                
-
-
-
-
-
-
             <h3>Backend</h3>
-
         </BodySiteInfoStyled>
     );
 }

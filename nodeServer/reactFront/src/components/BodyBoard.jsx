@@ -1,13 +1,37 @@
 import { useEffect, useState, useRef } from 'react';
 import BodyStyled from './BodyStyled.jsx';
 import fetchFunc from './fetch.js';
-import styled from 'styled-components';import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@material-ui/core';
+import styled from 'styled-components';
+import { Button, Input, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import StickyDiv from './customTags/StickyDiv.jsx';
 
+
+// WriteButtonFunc
+const writeButtonFunc = () => {
+    const name = document.getElementById('name').value;
+    const content = document.getElementById('content').value;
+    const pass = document.getElementById('pass').value;
+    
+    // First at all, have to check validation.
+    console.log(content, name, pass);
+
+    const checkContent = /^[가-힣a-zA-Z0-9.@_-\s]{4,300}$/; 
+    const checkNamePass = /^[가-힣a-zA-z0-9.@_-]{4,16}$/;
+
+    console.log(!checkContent.test(content));
+    console.log(!checkNamePass.test(name));
+    console.log(!checkNamePass.test(pass));
+
+    // if(!checkContent.test(content) && !checkNamePass.test(name) && !checkNamePass.test(pass)) {
+    //   console.log('false');
+    // }else{
+    //   console.log('true');
+    // }
+}
+
 // StyledComponent, can be empty, this means nothing special to add.
 const BodyBoardStyled = styled(BodyStyled)`
-    /* padding: 7rem 7vw 7rem 7vw; */
 `;
 
 // AWS gateway URL.
@@ -35,6 +59,7 @@ const useStyles = makeStyles({
         '& td': {
             fontSize: '1.5rem'
         },
+        margin: '0 0 3rem 0'
     },
     toolbar: {
         '& > :nth-child(n)': {
@@ -46,6 +71,17 @@ const useStyles = makeStyles({
     },
     menuItem: {
         fontSize: '1.5rem'
+    },
+    button: {
+        fontSize: '1.5rem',
+        color: 'black',
+    },
+    inputErr: {
+        fontSize: '1.5rem',
+        color: 'red'
+    },
+    input: {
+        fontSize: '1.3rem',
     }
 });
 
@@ -108,9 +144,9 @@ function BodyBoard() {
     return (
         <BodyBoardStyled ref = {board}>
             <StickyDiv text = '-Guest Book-' parent = {board} />
-
-            <TableContainer component = {Paper}>
-                <Table className = {classes.table} aria-label="simple table">
+            <Paper className = {classes.table} >
+            <TableContainer>
+                <Table aria-label="simple table">
                     <TableHead >
                         <TableRow>
                             <TableCell >Content</TableCell>
@@ -127,11 +163,44 @@ function BodyBoard() {
                         </TableRow>
                         ))}
                     </TableBody>
+
+                    <TableBody>
+                        <TableRow>
+                            <TableCell> 
+                                <Input id = 'content' classes = {{input: classes.input}} placeholder = 'Write here' 
+                                fullWidth = {true} multiline = {true} required /> 
+                            </TableCell>
+                            <TableCell> 
+                                <Input id = 'name' classes = {{input: classes.input}} placeholder = 'Name' required />
+                            </TableCell>
+                            <TableCell> 
+                                <Input id = 'pass' classes = {{input: classes.input}} placeholder = 'Password' 
+                                type = 'password' required /> 
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell> 
+                                <Input classes = {{root: classes.inputErr}} multiline = {true} 
+                                defaultValue = 'Only alphabets and numbers underscore, dash, and at can be used
+                                You can enter 4 to 300 characters for the content, and 4 to 16 characters for the name and password.'  
+                                error disableUnderline = {true} fullWidth = {true} readOnly/> 
+                            </TableCell>
+                            <TableCell> </TableCell>
+                            <TableCell> 
+                                <Button fullWidth = {true} classes = {{text: classes.button}}
+                                    onClick = { () => writeButtonFunc()}
+                                >Write</Button> 
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
                 </Table>
             </TableContainer>
+                 
+
+
             <TablePagination
                 rowsPerPageOptions = {[5, 10, 25]}
-                component = "div"
+                component = 'label'
                 count = {items.length}
                 rowsPerPage = {rowsPerPage}
                 page = {page}
@@ -142,6 +211,7 @@ function BodyBoard() {
                     menuItem: classes.menuItem,
                 }}
             />
+            </Paper>
         </BodyBoardStyled>
     );
 }
