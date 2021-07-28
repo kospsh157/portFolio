@@ -4,17 +4,18 @@ import BodyStyled from './BodyStyled';
 import CustomLink from './customTags/CustomLink.jsx';
 import StickyDiv from './customTags/StickyDiv.jsx';
 
+// StyledComponent, can be empty, this means nothing special to add.
 const MyInfoStyled = styled(BodyStyled)`
 `;
 
-function BodyMyInfo({ menuClick }) {
+function BodyMyInfo({menuClick}) {
     const myInfo = useRef();
     
     return(
         <MyInfoStyled ref = {myInfo}>
             <StickyDiv text = '-MyInfo-' parent = {myInfo} />
             <h3>Diploma in Korea</h3>
-                <p>I graduated from ShinGu College in Korea.</p>
+                <p>I graduated from the Department of WebIT at Shingu College, Korea.</p>
                 <CustomLink to = {{pathname: 'https://english.shingu.ac.kr/index.do'}}
                     target = '_blank'
                 >
