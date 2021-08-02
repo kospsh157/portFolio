@@ -11,7 +11,6 @@ import ErrPage from './components/ErrComponents/ErrPage.jsx';
 import Err404Page from './components/ErrComponents/Err404Page.jsx';
 
 
-
 // import Compoents Top and Footer
 const [TopBody, FooterBody] = TopAndFooter;
 

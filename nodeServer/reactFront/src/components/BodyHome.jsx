@@ -11,7 +11,7 @@ function BodyHome(){
     
     return(
         <BodyHomeStyled>
-            <h1>Hello.</h1>
+            <h1>Hello,</h1>
             <h2>Thank you for coming to my shabby resume site.</h2>
             <h2>I created this site all myself.</h2>
             <h2>This site was built with React and AWS.</h2>

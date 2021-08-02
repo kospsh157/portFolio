@@ -14,33 +14,52 @@ function BodySiteInfo() {
         <BodySiteInfoStyled ref = {siteInfo}>
             <StickyDiv text = '-SiteInfo-' parent = {siteInfo}/>
             <h3>Frontend</h3>
+                <img src = '/images/react+amplify.png'
+                        width = '70%'
+                        alt = 'Amplify and React'
+                    />
+                <p>I used React.js for front and it is hosted through AWS Amplify</p>
+                <br />
+
                 <p>
-                This site is built to be responsive.
-                It is most optimized for a FHD(1920x1080) pixel or higher PC monitor, 
-                <br />
-                but you can also use this site on mobile or smaller monitor as well. 
-                <br /><br />
-                The design concept was like looking at a resume delivered by mail.
-                <br />
-                I want you to read my resume as if reading a letter without hesitation.
+                    This site is built to be responsive.
+                    It is most optimized for a FHD(1920x1080) pixel or higher PC monitor, 
+                    <br />
+                    but you can also use this site on mobile or smaller monitor as well. 
+                    <br /><br />
+                    The design concept was like looking at a resume delivered by mail.
+                    <br />
+                    I hope you can easily read my resume site.
+                    <br /><br />
+                    I chosen styled-components module for CSS.
+                    <br />
+                    Sometimes I used "inline style CSS" for annoying things. but I tried to be consistent.
+                    <br /><br />
+                    This site is being watched through the AWS monitoring feature, 
+                    <br />
+                    and I'm still learning and updating this site to fix for issues.
+                    <br />
                 </p>
-                <br /><br />
-                <img src = "/images/react+amplify.png"
-                    width = '70%'
-                    height = 'auto'
-                    alt = 'Amplify and React'
-                />
-                <p>
-                This site is hosted through Amplify on AWS.
-                <br />
-                I tried to learn the basics as much as possible, and I wanted to use only the basics.
-                <br /><br />
-                This site is being watched through the amplify monitoring feature, 
-                <br />
-                and I'm still learning by doing safety tests myself.
-                <br />
-                </p>
+            <br /><br /><br /><br />
+
             <h3>Backend</h3>
+                <img src = '/images/backendDiagram.png'
+                    width = '70%'
+                    alt = 'AWS Backend Diagram'
+                />
+                <p>I have implemented a serverless environment using AWS Lambda, API Gateway, DynamoDB and IAM.</p>
+                <br />
+
+                <p>
+                    I can make a simple server using Node.js on Mac or Linux, 
+                    <br />
+                    but it is difficult, lots of mistakes, lots of times and I should have computer on 24/7.
+                    <br />
+                    So I used AWS.
+                    <br /><br />
+                    This is my first time using AWS, and I took this opportunity to learn the basics of how to use it.
+                </p>
+                <br /><br /><br /><br />
         </BodySiteInfoStyled>
     );
 }
