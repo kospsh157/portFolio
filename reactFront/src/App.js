@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TopAndFooter from './components/TopAndFooter.jsx';
 import SideMenu from './components/SideMenu.jsx';
 import BodyHome from './components/BodyHome.jsx';
@@ -9,7 +9,6 @@ import BodyBoard from './components/BodyBoard.jsx';
 import MenuButton from './components/customTags/MenuButton.jsx';
 import ErrPage from './components/ErrComponents/ErrPage.jsx';
 import Err404Page from './components/ErrComponents/Err404Page.jsx';
-
 
 // import Compoents Top and Footer
 const [TopBody, FooterBody] = TopAndFooter;

@@ -14,7 +14,7 @@ function BodySiteInfo() {
         <BodySiteInfoStyled ref = {siteInfo}>
             <StickyDiv text = '-SiteInfo-' parent = {siteInfo}/>
             <h3>Frontend</h3>
-                <img src = '/images/react+amplify.png'
+                <img src = '/images/reactamplify.png'
                         width = '70%'
                         alt = 'Amplify and React'
                     />
