@@ -142,6 +142,48 @@ const testVali = (content='noArg', name='noArg', pass='noArg') => {
     return invalid;
 }
 
+const validforNamePass = (e) => {
+    const id = e.target.id;
+    
+    const content = e.target.value;
+    const inputErr = document.getElementById('inputErr');
+    const checkNamePass = /^[가-힣a-zA-z0-9.,':()!?@_-\s]{4,21}$/;
+    const valid = checkNamePass.test(content)
+    if(!valid) {
+        // Invalid
+        inputErr.value = 'Only 4~21 characters, English, numbers, and ".,:!@#_-\'" are allowed for Name, Password.';
+        
+        return;
+    }else{
+        // valid
+        if(id === 'name') {
+            inputErr.value = 'Name validation passed!';
+        }else {
+            inputErr.value = 'Password validation passed!';
+        }
+        
+        return;
+    }
+}
+
+const validforContent = (e) => {
+    const content = e.target.value;
+    const inputErr = document.getElementById('inputErr');
+    const checkContent = /^[가-힣a-zA-Z0-9.,'"`<>():;~!?@#$%^&*()_+=/-\s]{4,160}$/; 
+    const valid = checkContent.test(content);
+
+    if(!valid) {
+        // Invalid
+        inputErr.value = 'Only 4~160 characters, English, numbers, and special characters are allowed for content.';
+
+        return;
+    }else{
+        // valid
+        inputErr.value = 'Content validation passed!';
+        
+        return;
+    }
+}
 // --Resources outside of component function END.--
 
 
@@ -292,7 +334,7 @@ function BodyBoard() {
 
     // CRUD Funtions(Read funcions is in useEffect Hook.).
     // WriteButtonFunc.
-    const writeButtonFunc = async () => {
+    const writeButtonFunc = () => {
         // First al all, Have to check validation of inputs
         const name = document.getElementById('name').value;
         const content = document.getElementById('content').value;
@@ -326,11 +368,9 @@ function BodyBoard() {
                 })
             }
 
-            // async await이 fetchFunc() 함수 내부에 있다
-            // 하지만 왜 다시 밖에서 이렇게 async await를 불러줘야하는가?
 
             // Start API communication to AWS gateway.
-            await fetchFunc(URL, optionsForPost).then((res) => {
+            fetchFunc(URL, optionsForPost).then((res) => {
                 if(res.errorType){
                     // There are AWS API error.
                     inputErr.value = "I'm sorry, there are error in aws server.";
@@ -531,9 +571,9 @@ function BodyBoard() {
             <Input id = 'inputErr' type = 'text' classes = {{root: classes.inputErr}} multiline = {true} 
             defaultValue = "CONTENT: Only English, numbers, special characters, and one space between 4 and 160 characters are allowed. NAME and PASSWORD: Only English, numbers and special characters: , . ' ( ) ! ? @ _ -, one space between 4 and 21 characters are allowed." 
             error disableUnderline = {true} fullWidth = {true} readOnly/> 
-            <Input id = 'content' type = 'text' classes = {{input: classes.input}} placeholder = 'Write here' 
+            <Input id = 'content' type = 'text' classes = {{input: classes.input}} onChange = {(e) => validforContent(e)} placeholder = 'Write here' 
             fullWidth = {true} multiline = {true} required /> 
-            <Input id = 'name' type = 'text' classes = {{input: classes.inputNamePass}} placeholder = 'Name' required />
+            <Input id = 'name' type = 'text' classes = {{input: classes.inputNamePass}} onChange = {(e) => validforNamePass(e)} placeholder = 'Name' required />
             <Input id = '$%^%^$%^' type = 'password' classes = {{input: classes.inputNamePass}} placeholder = 'Password' autoComplete = 'new-password' required/> 
             <Button classes = {{text: classes.inputNamePass}} 
                 onClick = {() => writeButtonFunc()}
