@@ -38,7 +38,9 @@ function SideMenu({ toggle }) {
                 <br/>
                 <CustomLink to='/siteinfo'>SiteInfo</CustomLink>
                 <br/>
-                <CustomLink to='/board' >GuestBook</CustomLink>
+                <CustomLink to='/board'>GuestBook</CustomLink>
+                <br/>
+                <CustomLink to='/LiveChat'>LiveChat</CustomLink>
                 <br/>
             </ul>
         </SideMenuStyled>

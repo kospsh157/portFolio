@@ -8,7 +8,7 @@ import StickyDiv from './customTags/StickyDiv.jsx';
 const MyInfoStyled = styled(BodyStyled)`
 `;
 
-function BodyMyInfo({menuClick}) {
+function BodyMyInfo() {
     const myInfo = useRef();
     
     return(

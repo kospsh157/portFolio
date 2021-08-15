@@ -8,6 +8,8 @@ import BodySiteInfo from './components/BodySiteInfo.jsx';
 import BodyBoard from './components/BodyBoard.jsx';
 import MenuButton from './components/customTags/MenuButton.jsx';
 import Err404Page from './components/ErrComponents/Err404Page.jsx';
+import BodyChat from './components/BodyChat.jsx';
+
 
 // import Compoents Top and Footer
 const [TopBody, FooterBody] = TopAndFooter;
@@ -37,6 +39,7 @@ function App() {
           <Route exact path = '/myinfo' component = {BodyMyInfo} />
           <Route exact path = '/siteinfo' component = {BodySiteInfo} />
           <Route exact path = '/board'  component = {BodyBoard} />
+          <Route exact path = '/livechat'  component = {BodyChat} />
           
           <Route component = {Err404Page} />
         </Switch>
